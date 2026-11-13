@@ -338,5 +338,22 @@
       "TEMPLES"
     ],
     "gender_preference": "ANY"
+  },
+  {
+    "traveller_id": "T-025",
+    "name": "Aryan",
+    "age": 20,
+    "gender": "MALE",
+    "home_city": "Bengaluru",
+    "home_airport": "BLR",
+    "interests": [
+      "TEMPLES",
+      "STREET_FOOD",
+      "PHOTOGRAPHY",
+      "NIGHTLIFE",
+      "NATURE"
+    ],
+    "gender_preference": "ANY",
+    "created_at": "2026-11-13T18:33:37.777Z"
   }
 ]

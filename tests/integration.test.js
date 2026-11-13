@@ -12,6 +12,38 @@ import {
 } from '../server/src/models/db.js';
 
 import { searchHotelsForGroup, recalculateDynamicCostSplit } from '../server/src/services/hotelPricingService.js';
+import { getSeedGroups, getSeedTravellers } from '../server/src/services/catalogService.js';
+
+// ── Self-healing reset: runs synchronously when this module loads ─────────────
+// Guarantees G-01 and T-001/T-002 are in their canonical seed state regardless
+// of what any previous test run mutated on disk (transfers, disbands, etc.).
+
+// 1. Restore seed groups that may have been deleted by disband/transfer tests
+const seedGroups = getSeedGroups();
+for (const sg of seedGroups) {
+  const existing = Groups.findOne(g => g.group_id === sg.group_id);
+  if (!existing) {
+    Groups.insert(sg);                       // re-seed if deleted
+  } else if (sg.group_id === 'G-01') {
+    // Always restore G-01 to known-good state
+    Groups.update(
+      g => g.group_id === 'G-01',
+      g => ({ ...g, owner_id: 'T-001', member_ids: ['T-001'], updated_at: new Date().toISOString() })
+    );
+  }
+}
+
+// 2. Restore seed travellers that may be missing
+const seedTravellers = getSeedTravellers();
+for (const st of seedTravellers) {
+  if (!Travellers.findOne(t => t.traveller_id === st.traveller_id)) {
+    Travellers.insert(st);
+  }
+}
+
+// 3. Clear any stale join requests for G-01 from prior test runs
+JoinRequests.delete(r => r.group_id === 'G-01');
+// ─────────────────────────────────────────────────────────────────────────────
 
 test('Integration 1: Register Sarah & Priya profiles in persistent store', () => {
   const sarah = Travellers.findOne(t => t.traveller_id === 'T-001');

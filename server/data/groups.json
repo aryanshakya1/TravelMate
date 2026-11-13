@@ -2,15 +2,17 @@
   {
     "group_id": "G-01",
     "name": "Kyoto Spring Temples",
-    "owner_id": "T-023",
-    "member_ids": [],
+    "owner_id": "T-001",
+    "member_ids": [
+      "T-001"
+    ],
     "city": "Kyoto",
     "check_in": "2027-04-10",
     "check_out": "2027-04-15",
     "max_size": 3,
     "budget_inr": 60000,
     "itinerary": "Fushimi Inari at sunrise, Nishiki Market lunch, Gion walk, photo day in Arashiyama.",
-    "updated_at": "2026-11-13T18:21:55.983Z"
+    "updated_at": "2026-11-13T18:45:58.495Z"
   },
   {
     "group_id": "G-02",
@@ -24,8 +26,7 @@
     "check_out": "2027-04-18",
     "max_size": 3,
     "budget_inr": 64000,
-    "itinerary": "Philosopher's Path, tea house, Kiyomizu-dera evening light-up.",
-    "updated_at": "2026-11-13T18:24:26.637Z"
+    "itinerary": "Philosopher's Path, tea house, Kiyomizu-dera evening light-up."
   },
   {
     "group_id": "G-03",
@@ -56,20 +57,33 @@
     "itinerary": "Two nights in a ryokan, kaiseki dinner, private temple tours."
   },
   {
+    "group_id": "G-05",
+    "name": "Kyoto Trails and Shrines",
+    "owner_id": "T-007",
+    "member_ids": [
+      "T-007",
+      "T-008"
+    ],
+    "city": "Kyoto",
+    "check_in": "2027-04-11",
+    "check_out": "2027-04-15",
+    "max_size": 3,
+    "budget_inr": 63000,
+    "itinerary": "Mount Kurama hike, Kibune shrine, Kyoto National Museum."
+  },
+  {
     "group_id": "G-06",
     "name": "Kyoto Camera Walk",
     "owner_id": "T-009",
     "member_ids": [
-      "T-009",
-      "T-026"
+      "T-009"
     ],
     "city": "Kyoto",
     "check_in": "2027-04-10",
     "check_out": "2027-04-13",
     "max_size": 3,
     "budget_inr": 62000,
-    "itinerary": "Golden hour shots at Yasaka Pagoda, Pontocho at night, market breakfast.",
-    "updated_at": "2026-11-13T08:20:54.102Z"
+    "itinerary": "Golden hour shots at Yasaka Pagoda, Pontocho at night, market breakfast."
   },
   {
     "group_id": "G-07",
@@ -92,16 +106,14 @@
     "name": "Kyoto Night Food Trail",
     "owner_id": "T-013",
     "member_ids": [
-      "T-013",
-      "T-001"
+      "T-013"
     ],
     "city": "Kyoto",
     "check_in": "2027-04-10",
     "check_out": "2027-04-14",
     "max_size": 4,
     "budget_inr": 55000,
-    "itinerary": "Pontocho izakaya night, Nishiki Market, Yasaka Shrine, Kiyomizu-dera.",
-    "updated_at": "2026-11-13T11:09:08.856Z"
+    "itinerary": "Pontocho izakaya night, Nishiki Market, Yasaka Shrine, Kiyomizu-dera."
   },
   {
     "group_id": "G-09",
@@ -161,40 +173,163 @@
     "itinerary": "Shinjuku Gyoen, Mount Takao day hike, Ueno Park, teamLab."
   },
   {
-    "group_id": "TLG-GA-01",
-    "name": "Test Trip TLG-GA-01",
-    "owner_id": "TLG-OWNER-01",
+    "group_id": "TLG-GA-303749",
+    "name": "Test Trip TLG-GA-303749",
+    "owner_id": "TLG-OWNER-303749",
     "city": "Kyoto",
     "check_in": "2027-04-05",
     "check_out": "2027-04-10",
     "budget_inr": 80000,
     "max_size": 4,
     "member_ids": [
-      "TLG-OWNER-01",
-      "TLG-M2-01"
+      "TLG-OWNER-303749",
+      "TLG-M2-303749"
     ],
     "gender_preference": "ANY",
     "itinerary": "Test itinerary",
-    "created_at": "2026-11-13T18:02:52.211Z",
-    "updated_at": "2026-11-13T18:02:52.225Z"
+    "created_at": "2026-11-13T18:41:43.755Z",
+    "updated_at": "2026-11-13T18:41:43.772Z"
   },
   {
-    "group_id": "TLG-GD-01",
-    "name": "Test Trip TLG-GD-01",
-    "owner_id": "TLG-OWNER-01",
+    "group_id": "TLG-GC-303749",
+    "name": "Test Trip TLG-GC-303749",
+    "owner_id": "TLG-M1-303749",
     "city": "Kyoto",
     "check_in": "2027-04-05",
     "check_out": "2027-04-10",
     "budget_inr": 80000,
     "max_size": 4,
     "member_ids": [
-      "TLG-OWNER-01",
-      "TLG-M1-01"
+      "TLG-M2-303749"
     ],
     "gender_preference": "ANY",
     "itinerary": "Test itinerary",
-    "created_at": "2026-11-13T18:02:52.211Z",
-    "updated_at": "2026-11-13T18:02:52.211Z"
+    "created_at": "2026-11-13T18:41:43.755Z",
+    "updated_at": "2026-11-13T18:41:43.785Z"
+  },
+  {
+    "group_id": "TLG-GD-303749",
+    "name": "Test Trip TLG-GD-303749",
+    "owner_id": "TLG-OWNER-303749",
+    "city": "Kyoto",
+    "check_in": "2027-04-05",
+    "check_out": "2027-04-10",
+    "budget_inr": 80000,
+    "max_size": 4,
+    "member_ids": [
+      "TLG-OWNER-303749",
+      "TLG-M1-303749"
+    ],
+    "gender_preference": "ANY",
+    "itinerary": "Test itinerary",
+    "created_at": "2026-11-13T18:41:43.755Z",
+    "updated_at": "2026-11-13T18:41:43.755Z"
+  },
+  {
+    "group_id": "TLG-GA-331185",
+    "name": "Test Trip TLG-GA-331185",
+    "owner_id": "TLG-OWNER-331185",
+    "city": "Kyoto",
+    "check_in": "2027-04-05",
+    "check_out": "2027-04-10",
+    "budget_inr": 80000,
+    "max_size": 4,
+    "member_ids": [
+      "TLG-OWNER-331185",
+      "TLG-M2-331185"
+    ],
+    "gender_preference": "ANY",
+    "itinerary": "Test itinerary",
+    "created_at": "2026-11-13T18:42:11.190Z",
+    "updated_at": "2026-11-13T18:42:11.201Z"
+  },
+  {
+    "group_id": "TLG-GC-331185",
+    "name": "Test Trip TLG-GC-331185",
+    "owner_id": "TLG-M1-331185",
+    "city": "Kyoto",
+    "check_in": "2027-04-05",
+    "check_out": "2027-04-10",
+    "budget_inr": 80000,
+    "max_size": 4,
+    "member_ids": [
+      "TLG-M2-331185"
+    ],
+    "gender_preference": "ANY",
+    "itinerary": "Test itinerary",
+    "created_at": "2026-11-13T18:42:11.190Z",
+    "updated_at": "2026-11-13T18:42:11.208Z"
+  },
+  {
+    "group_id": "TLG-GD-331185",
+    "name": "Test Trip TLG-GD-331185",
+    "owner_id": "TLG-OWNER-331185",
+    "city": "Kyoto",
+    "check_in": "2027-04-05",
+    "check_out": "2027-04-10",
+    "budget_inr": 80000,
+    "max_size": 4,
+    "member_ids": [
+      "TLG-OWNER-331185",
+      "TLG-M1-331185"
+    ],
+    "gender_preference": "ANY",
+    "itinerary": "Test itinerary",
+    "created_at": "2026-11-13T18:42:11.190Z",
+    "updated_at": "2026-11-13T18:42:11.190Z"
+  },
+  {
+    "group_id": "TLG-GA-558503",
+    "name": "Test Trip TLG-GA-558503",
+    "owner_id": "TLG-OWNER-558503",
+    "city": "Kyoto",
+    "check_in": "2027-04-05",
+    "check_out": "2027-04-10",
+    "budget_inr": 80000,
+    "max_size": 4,
+    "member_ids": [
+      "TLG-OWNER-558503",
+      "TLG-M2-558503"
+    ],
+    "gender_preference": "ANY",
+    "itinerary": "Test itinerary",
+    "created_at": "2026-11-13T18:45:58.511Z",
+    "updated_at": "2026-11-13T18:45:58.526Z"
+  },
+  {
+    "group_id": "TLG-GC-558503",
+    "name": "Test Trip TLG-GC-558503",
+    "owner_id": "TLG-M1-558503",
+    "city": "Kyoto",
+    "check_in": "2027-04-05",
+    "check_out": "2027-04-10",
+    "budget_inr": 80000,
+    "max_size": 4,
+    "member_ids": [
+      "TLG-M2-558503"
+    ],
+    "gender_preference": "ANY",
+    "itinerary": "Test itinerary",
+    "created_at": "2026-11-13T18:45:58.511Z",
+    "updated_at": "2026-11-13T18:45:58.538Z"
+  },
+  {
+    "group_id": "TLG-GD-558503",
+    "name": "Test Trip TLG-GD-558503",
+    "owner_id": "TLG-OWNER-558503",
+    "city": "Kyoto",
+    "check_in": "2027-04-05",
+    "check_out": "2027-04-10",
+    "budget_inr": 80000,
+    "max_size": 4,
+    "member_ids": [
+      "TLG-OWNER-558503",
+      "TLG-M1-558503"
+    ],
+    "gender_preference": "ANY",
+    "itinerary": "Test itinerary",
+    "created_at": "2026-11-13T18:45:58.511Z",
+    "updated_at": "2026-11-13T18:45:58.511Z"
   },
   {
     "group_id": "G-DEMO-KYOTO",
@@ -209,59 +344,59 @@
     "max_size": 3,
     "budget_inr": 60000,
     "itinerary": "Fushimi Inari, Nishiki Market street food crawl, Gion historic walk.",
-    "created_at": "2026-11-13T18:20:27.999Z"
+    "created_at": "2026-11-13T18:46:12.044Z"
   },
   {
-    "group_id": "TLG-GA-028006",
-    "name": "Test Trip TLG-GA-028006",
-    "owner_id": "TLG-OWNER-028006",
+    "group_id": "TLG-GA-572051",
+    "name": "Test Trip TLG-GA-572051",
+    "owner_id": "TLG-OWNER-572051",
     "city": "Kyoto",
     "check_in": "2027-04-05",
     "check_out": "2027-04-10",
     "budget_inr": 80000,
     "max_size": 4,
     "member_ids": [
-      "TLG-OWNER-028006",
-      "TLG-M2-028006"
+      "TLG-OWNER-572051",
+      "TLG-M2-572051"
     ],
     "gender_preference": "ANY",
     "itinerary": "Test itinerary",
-    "created_at": "2026-11-13T18:20:28.014Z",
-    "updated_at": "2026-11-13T18:20:28.026Z"
+    "created_at": "2026-11-13T18:46:12.056Z",
+    "updated_at": "2026-11-13T18:46:12.065Z"
   },
   {
-    "group_id": "TLG-GC-028006",
-    "name": "Test Trip TLG-GC-028006",
-    "owner_id": "TLG-M1-028006",
+    "group_id": "TLG-GC-572051",
+    "name": "Test Trip TLG-GC-572051",
+    "owner_id": "TLG-M1-572051",
     "city": "Kyoto",
     "check_in": "2027-04-05",
     "check_out": "2027-04-10",
     "budget_inr": 80000,
     "max_size": 4,
     "member_ids": [
-      "TLG-M2-028006"
+      "TLG-M2-572051"
     ],
     "gender_preference": "ANY",
     "itinerary": "Test itinerary",
-    "created_at": "2026-11-13T18:20:28.014Z",
-    "updated_at": "2026-11-13T18:20:28.038Z"
+    "created_at": "2026-11-13T18:46:12.056Z",
+    "updated_at": "2026-11-13T18:46:12.074Z"
   },
   {
-    "group_id": "TLG-GD-028006",
-    "name": "Test Trip TLG-GD-028006",
-    "owner_id": "TLG-OWNER-028006",
+    "group_id": "TLG-GD-572051",
+    "name": "Test Trip TLG-GD-572051",
+    "owner_id": "TLG-OWNER-572051",
     "city": "Kyoto",
     "check_in": "2027-04-05",
     "check_out": "2027-04-10",
     "budget_inr": 80000,
     "max_size": 4,
     "member_ids": [
-      "TLG-OWNER-028006",
-      "TLG-M1-028006"
+      "TLG-OWNER-572051",
+      "TLG-M1-572051"
     ],
     "gender_preference": "ANY",
     "itinerary": "Test itinerary",
-    "created_at": "2026-11-13T18:20:28.014Z",
-    "updated_at": "2026-11-13T18:20:28.014Z"
+    "created_at": "2026-11-13T18:46:12.056Z",
+    "updated_at": "2026-11-13T18:46:12.056Z"
   }
 ]
