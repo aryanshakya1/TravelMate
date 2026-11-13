@@ -23,7 +23,10 @@ import {
   MessageSquare,
   Send,
   ThumbsUp,
-  Info
+  Info,
+  LogOut,
+  AlertTriangle,
+  Crown
 } from 'lucide-react';
 
 export default function CommonGroupWorkspacePage({ groupId }) {
@@ -45,6 +48,15 @@ export default function CommonGroupWorkspacePage({ groupId }) {
   // Booking Modal
   const [selectedOptionForBooking, setSelectedOptionForBooking] = useState(null);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
+  // Leave Group Modal
+  const [isLeaveModalOpen, setIsLeaveModalOpen] = useState(false);
+  const [isLeavingGroup, setIsLeavingGroup] = useState(false);
+
+  // Owner Actions Modal (transfer or disband)
+  const [isOwnerActionModalOpen, setIsOwnerActionModalOpen] = useState(false);
+  const [ownerAction, setOwnerAction] = useState(null); // 'transfer' | 'disband'
+  const [selectedNewOwner, setSelectedNewOwner] = useState('');
 
   const activeId = currentTraveller?.traveller_id;
 
@@ -191,6 +203,64 @@ export default function CommonGroupWorkspacePage({ groupId }) {
     }
   };
 
+  // --- LEAVE GROUP (non-owner member) ---
+  const handleLeaveGroup = async () => {
+    setIsLeavingGroup(true);
+    try {
+      await api.leaveGroup(group.group_id, activeId);
+      setIsLeaveModalOpen(false);
+      setNotification({
+        type: 'success',
+        message: `You have left "${group.name}". The workspace is now closed for you.`
+      });
+      setTimeout(() => navigate('/'), 1800);
+    } catch (err) {
+      setIsLeaveModalOpen(false);
+      setNotification({ type: 'error', message: err.message || 'Could not leave the group.' });
+    } finally {
+      setIsLeavingGroup(false);
+    }
+  };
+
+  // --- DISBAND GROUP (owner) ---
+  const handleDisbandGroup = async () => {
+    setIsLeavingGroup(true);
+    try {
+      await api.disbandGroup(group.group_id, activeId);
+      setIsOwnerActionModalOpen(false);
+      setNotification({ type: 'success', message: `"${group.name}" has been disbanded.` });
+      setTimeout(() => navigate('/'), 1800);
+    } catch (err) {
+      setIsOwnerActionModalOpen(false);
+      setNotification({ type: 'error', message: err.message || 'Could not disband the group.' });
+    } finally {
+      setIsLeavingGroup(false);
+    }
+  };
+
+  // --- TRANSFER OWNERSHIP (owner) ---
+  const handleTransferOwnership = async () => {
+    if (!selectedNewOwner) {
+      setNotification({ type: 'error', message: 'Please select a member to transfer leadership to.' });
+      return;
+    }
+    setIsLeavingGroup(true);
+    try {
+      await api.transferOwnership(group.group_id, {
+        current_owner_id: activeId,
+        new_owner_id: selectedNewOwner
+      });
+      setIsOwnerActionModalOpen(false);
+      setNotification({ type: 'success', message: 'Leadership transferred! You have left the group.' });
+      setTimeout(() => navigate('/'), 1800);
+    } catch (err) {
+      setIsOwnerActionModalOpen(false);
+      setNotification({ type: 'error', message: err.message || 'Could not transfer ownership.' });
+    } finally {
+      setIsLeavingGroup(false);
+    }
+  };
+
   if (loading) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-16 text-center text-sm text-slate-400">
@@ -251,8 +321,8 @@ export default function CommonGroupWorkspacePage({ groupId }) {
             </p>
           </div>
 
-          {/* Member Avatars */}
-          <div className="flex items-center gap-2">
+          {/* Member Avatars + Leave/Owner Actions */}
+          <div className="flex items-center gap-2 flex-wrap">
             <div className="flex -space-x-2 overflow-hidden">
               {(group.members || []).map((m) => (
                 <div
@@ -270,6 +340,32 @@ export default function CommonGroupWorkspacePage({ groupId }) {
               <div className="font-bold text-slate-800">{memberCount} of {group.max_size} Travellers</div>
               <div className="text-[10px]">Approved Members</div>
             </div>
+
+            {/* Leave / Transfer / Disband — only before a booking is finalized */}
+            {!booking && (
+              <>
+                {group.owner_id !== activeId && (
+                  <button
+                    onClick={() => setIsLeaveModalOpen(true)}
+                    className="ml-2 px-3 py-1.5 rounded-xl border border-rose-200 text-rose-700 bg-rose-50 hover:bg-rose-100 text-xs font-bold transition flex items-center gap-1.5"
+                    title="Leave this group"
+                  >
+                    <LogOut className="w-3.5 h-3.5" />
+                    <span>Leave</span>
+                  </button>
+                )}
+                {group.owner_id === activeId && (
+                  <button
+                    onClick={() => { setOwnerAction(null); setSelectedNewOwner(''); setIsOwnerActionModalOpen(true); }}
+                    className="ml-2 px-3 py-1.5 rounded-xl border border-rose-200 text-rose-700 bg-rose-50 hover:bg-rose-100 text-xs font-bold transition flex items-center gap-1.5"
+                    title="Transfer or disband group"
+                  >
+                    <Crown className="w-3.5 h-3.5" />
+                    <span>Transfer / Disband</span>
+                  </button>
+                )}
+              </>
+            )}
           </div>
         </div>
 
@@ -675,6 +771,133 @@ export default function CommonGroupWorkspacePage({ groupId }) {
             </div>
           </div>
         )}
+      </Modal>
+
+      {/* ── Leave Group Confirmation Modal (non-owner member) ── */}
+      <Modal
+        isOpen={isLeaveModalOpen}
+        onClose={() => setIsLeaveModalOpen(false)}
+        title="Leave Group?"
+      >
+        <div className="space-y-4">
+          <div className="flex items-start gap-3 p-4 rounded-xl bg-amber-50 border border-amber-200">
+            <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+            <p className="text-sm text-amber-800">
+              Are you sure you want to leave <strong>{group?.name}</strong>?
+              Your reserved seat will reopen for other travellers immediately.
+            </p>
+          </div>
+          <div className="flex justify-end gap-2 pt-1">
+            <button
+              onClick={() => setIsLeaveModalOpen(false)}
+              disabled={isLeavingGroup}
+              className="px-4 py-2 rounded-xl text-xs font-bold text-slate-500 hover:bg-slate-100 transition"
+            >
+              Stay in Group
+            </button>
+            <button
+              onClick={handleLeaveGroup}
+              disabled={isLeavingGroup}
+              className="px-5 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold transition flex items-center gap-1.5 shadow-sm disabled:opacity-50"
+            >
+              <LogOut className="w-3.5 h-3.5" />
+              <span>{isLeavingGroup ? 'Leaving...' : 'Yes, Leave Group'}</span>
+            </button>
+          </div>
+        </div>
+      </Modal>
+
+      {/* ── Owner Actions Modal: Transfer Leadership or Disband ── */}
+      <Modal
+        isOpen={isOwnerActionModalOpen}
+        onClose={() => setIsOwnerActionModalOpen(false)}
+        title="Owner Options"
+      >
+        <div className="space-y-4">
+          {!ownerAction && (
+            <>
+              <p className="text-xs text-slate-500">
+                As the trip owner, you can't simply leave. Choose one of the options below:
+              </p>
+              <div className="grid grid-cols-1 gap-3">
+                <button
+                  onClick={() => setOwnerAction('transfer')}
+                  className="p-4 rounded-xl border-2 border-brand-200 bg-brand-50 hover:bg-brand-100 text-left transition"
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <Crown className="w-4 h-4 text-brand-600" />
+                    <span className="text-sm font-bold text-brand-800">Transfer Leadership</span>
+                  </div>
+                  <p className="text-xs text-slate-500">Hand ownership to another member. You will leave the group after transferring.</p>
+                </button>
+                <button
+                  onClick={() => setOwnerAction('disband')}
+                  className="p-4 rounded-xl border-2 border-rose-200 bg-rose-50 hover:bg-rose-100 text-left transition"
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <AlertTriangle className="w-4 h-4 text-rose-600" />
+                    <span className="text-sm font-bold text-rose-800">Disband Group</span>
+                  </div>
+                  <p className="text-xs text-slate-500">Permanently delete this group, all requests, shortlists, and messages.</p>
+                </button>
+              </div>
+            </>
+          )}
+
+          {ownerAction === 'transfer' && (
+            <>
+              <p className="text-xs text-slate-500">Select a current member to become the new trip owner. You will leave the group.</p>
+              <select
+                value={selectedNewOwner}
+                onChange={(e) => setSelectedNewOwner(e.target.value)}
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm bg-white"
+              >
+                <option value="">— Select new owner —</option>
+                {(group?.members || [])
+                  .filter(m => m.traveller_id !== activeId)
+                  .map(m => (
+                    <option key={m.traveller_id} value={m.traveller_id}>
+                      {m.name} ({m.traveller_id})
+                    </option>
+                  ))
+                }
+              </select>
+              <div className="flex justify-end gap-2 pt-1">
+                <button onClick={() => setOwnerAction(null)} className="px-4 py-2 rounded-xl text-xs font-bold text-slate-500 hover:bg-slate-100 transition">Back</button>
+                <button
+                  onClick={handleTransferOwnership}
+                  disabled={isLeavingGroup || !selectedNewOwner}
+                  className="px-5 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold transition flex items-center gap-1.5 shadow-sm disabled:opacity-50"
+                >
+                  <Crown className="w-3.5 h-3.5" />
+                  <span>{isLeavingGroup ? 'Transferring...' : 'Transfer & Leave'}</span>
+                </button>
+              </div>
+            </>
+          )}
+
+          {ownerAction === 'disband' && (
+            <>
+              <div className="flex items-start gap-3 p-4 rounded-xl bg-rose-50 border border-rose-200">
+                <AlertTriangle className="w-5 h-5 text-rose-600 flex-shrink-0 mt-0.5" />
+                <p className="text-sm text-rose-800">
+                  This will <strong>permanently delete</strong> "{group?.name}" along with all join requests, saved hotels, and messages. This cannot be undone.
+                </p>
+              </div>
+              <div className="flex justify-end gap-2 pt-1">
+                <button onClick={() => setOwnerAction(null)} className="px-4 py-2 rounded-xl text-xs font-bold text-slate-500 hover:bg-slate-100 transition">Back</button>
+                <button
+                  onClick={handleDisbandGroup}
+                  disabled={isLeavingGroup}
+                  className="px-5 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold transition flex items-center gap-1.5 shadow-sm disabled:opacity-50"
+                >
+                  <AlertTriangle className="w-3.5 h-3.5" />
+                  <span>{isLeavingGroup ? 'Disbanding...' : 'Yes, Disband Group'}</span>
+                </button>
+              </div>
+            </>
+          )}
+        </div>
       </Modal>
     </div>
   );

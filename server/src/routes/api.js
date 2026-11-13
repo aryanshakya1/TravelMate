@@ -7,6 +7,7 @@ import { createJoinRequest, getGroupRequests, updateRequestStatus } from '../con
 import { getHotelsForGroup, saveHotelOption, getSavedHotels, removeSavedHotel } from '../controllers/hotelController.js';
 import { finalizeMockBooking, getGroupBooking } from '../controllers/bookingController.js';
 import { getGroupMessages, sendGroupMessage } from '../controllers/messageController.js';
+import { leaveGroup, disbandGroup, transferOwnership } from '../controllers/groupMemberController.js';
 
 const router = Router();
 
@@ -55,5 +56,10 @@ router.get('/groups/:id/bookings', getGroupBooking);
 // Group Collaboration Chat (Stretch S1)
 router.get('/groups/:id/messages', getGroupMessages);
 router.post('/groups/:id/messages', sendGroupMessage);
+
+// Group Membership Management: Leave, Disband, Transfer Ownership
+router.delete('/groups/:id/members/:travellerId', leaveGroup);
+router.delete('/groups/:id', disbandGroup);
+router.patch('/groups/:id/owner', transferOwnership);
 
 export default router;

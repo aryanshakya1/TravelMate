@@ -122,45 +122,6 @@
     "updated_at": "2026-11-13T09:15:49.112Z"
   },
   {
-    "request_id": "REQ-998248-444",
-    "group_id": "G-05",
-    "traveller_id": "T-001",
-    "status": "rejected",
-    "message": "Hi! Excited to join this trip. My dates and interests align well with your itinerary!",
-    "applicantDetails": {
-      "traveller_id": "T-001",
-      "destination": "Kyoto",
-      "check_in": "2027-04-11",
-      "check_out": "2027-04-15",
-      "budget_inr": 63000,
-      "interests": [
-        "TEMPLES",
-        "STREET_FOOD",
-        "PHOTOGRAPHY",
-        "BUDGET_STAYS"
-      ],
-      "gender": "FEMALE",
-      "gender_preference": "SAME_GENDER"
-    },
-    "compatibility": {
-      "score": 67,
-      "breakdown": {
-        "interestSimilarity": 17,
-        "dateSimilarity": 100,
-        "budgetSimilarity": 100
-      },
-      "matchReasons": {
-        "sharedInterests": [
-          "TEMPLES"
-        ],
-        "overlapNights": 4,
-        "budgetDifference": 0
-      }
-    },
-    "created_at": "2026-11-13T11:06:38.248Z",
-    "updated_at": "2026-11-13T11:25:39.381Z"
-  },
-  {
     "request_id": "REQ-128890-506",
     "group_id": "G-08",
     "traveller_id": "T-001",
@@ -199,5 +160,119 @@
     },
     "created_at": "2026-11-13T11:08:48.890Z",
     "updated_at": "2026-11-13T11:09:08.858Z"
+  },
+  {
+    "request_id": "REQ-073223-205",
+    "group_id": "G-01",
+    "traveller_id": "T-007",
+    "status": "rejected",
+    "message": "Hi! Excited to join this trip. My dates and interests align well with your itinerary!",
+    "applicantDetails": {
+      "traveller_id": "T-007",
+      "destination": "Kyoto",
+      "check_in": "2027-04-10",
+      "check_out": "2027-04-15",
+      "budget_inr": 60000,
+      "interests": [
+        "TEMPLES",
+        "HIKING",
+        "MUSEUMS"
+      ],
+      "gender": "FEMALE",
+      "gender_preference": "SAME_GENDER"
+    },
+    "compatibility": {
+      "score": 67,
+      "breakdown": {
+        "interestSimilarity": 17,
+        "dateSimilarity": 100,
+        "budgetSimilarity": 100
+      },
+      "matchReasons": {
+        "sharedInterests": [
+          "TEMPLES"
+        ],
+        "overlapNights": 5,
+        "budgetDifference": 0
+      }
+    },
+    "created_at": "2026-11-13T18:04:33.223Z",
+    "updated_at": "2026-11-13T18:05:05.327Z"
+  },
+  {
+    "request_id": "REQ-281345-265",
+    "group_id": "G-06",
+    "traveller_id": "T-024",
+    "status": "rejected",
+    "message": "Hi! Excited to join this trip. My dates and interests align well with your itinerary!",
+    "applicantDetails": {
+      "traveller_id": "T-024",
+      "destination": "Kyoto",
+      "check_in": "2027-04-10",
+      "check_out": "2027-04-13",
+      "budget_inr": 62000,
+      "interests": [
+        "HIKING",
+        "NATURE",
+        "TEMPLES"
+      ],
+      "gender": "MALE",
+      "gender_preference": "ANY"
+    },
+    "compatibility": {
+      "score": 68,
+      "breakdown": {
+        "interestSimilarity": 20,
+        "dateSimilarity": 100,
+        "budgetSimilarity": 100
+      },
+      "matchReasons": {
+        "sharedInterests": [
+          "TEMPLES"
+        ],
+        "overlapNights": 3,
+        "budgetDifference": 0
+      }
+    },
+    "created_at": "2026-11-13T18:08:01.345Z",
+    "updated_at": "2026-11-13T18:08:22.184Z"
+  },
+  {
+    "request_id": "REQ-345945-197",
+    "group_id": "G-01",
+    "traveller_id": "T-023",
+    "status": "approved",
+    "message": "Hi! Excited to join this trip. My dates and interests align well with your itinerary!",
+    "applicantDetails": {
+      "traveller_id": "T-023",
+      "destination": "Kyoto",
+      "check_in": "2027-04-10",
+      "check_out": "2027-04-15",
+      "budget_inr": 60000,
+      "interests": [
+        "NATURE",
+        "HIKING",
+        "PHOTOGRAPHY"
+      ],
+      "gender": "FEMALE",
+      "gender_preference": "ANY"
+    },
+    "compatibility": {
+      "score": 67,
+      "breakdown": {
+        "interestSimilarity": 17,
+        "dateSimilarity": 100,
+        "budgetSimilarity": 100
+      },
+      "matchReasons": {
+        "sharedInterests": [
+          "PHOTOGRAPHY"
+        ],
+        "overlapNights": 5,
+        "budgetDifference": 0
+      }
+    },
+    "created_at": "2026-11-13T18:09:05.945Z",
+    "updated_at": "2026-11-13T18:21:33.391Z"
   }
 ]

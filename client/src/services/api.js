@@ -91,6 +91,18 @@ export const api = {
   sendMessage: (groupId, payload) => request(`/groups/${groupId}/messages`, {
     method: 'POST',
     body: JSON.stringify(payload)
+  }),
+
+  // Group Membership: Leave, Disband, Transfer Ownership
+  leaveGroup: (groupId, travellerId) => request(`/groups/${groupId}/members/${travellerId}`, {
+    method: 'DELETE'
+  }),
+  disbandGroup: (groupId, ownerId) => request(`/groups/${groupId}?owner_id=${encodeURIComponent(ownerId)}`, {
+    method: 'DELETE'
+  }),
+  transferOwnership: (groupId, payload) => request(`/groups/${groupId}/owner`, {
+    method: 'PATCH',
+    body: JSON.stringify(payload)
   })
 };
 
