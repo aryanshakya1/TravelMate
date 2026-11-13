@@ -1,0 +1,43 @@
+[
+  {
+    "booking_id": "BK-1794568266650",
+    "booking_reference": "TM-6BNEWV",
+    "group_id": "G-08",
+    "group_name": "Kyoto Night Food Trail",
+    "hotel_id": "HTL-KYO-009",
+    "hotel_name": "Higashiyama Machiya Stay",
+    "hotel_city": "Kyoto",
+    "hotel_area": "Higashiyama",
+    "hotel_image": "images/hotels/HOTEL-RYOKAN-1.jpg",
+    "room_id": "RM-KYO-009-C",
+    "room_name": "Family Suite",
+    "room_type": "FAMILY_SUITE",
+    "rooms_needed": 1,
+    "check_in": "2027-04-10",
+    "check_out": "2027-04-14",
+    "nights_count": 4,
+    "members_count": 2,
+    "member_ids": [
+      "T-013",
+      "T-001"
+    ],
+    "member_allocations": [
+      {
+        "travellerId": "T-013",
+        "name": "Lakshmi Das",
+        "shareInr": 49280
+      },
+      {
+        "travellerId": "T-001",
+        "name": "Sarah Thomas",
+        "shareInr": 49280
+      }
+    ],
+    "total_cost": 98560,
+    "cost_per_person": 49280,
+    "status": "CONFIRMED",
+    "finalized_by": "T-001",
+    "finalized_at": "2026-11-13T11:11:06.650Z",
+    "disclaimer": "This is a mock booking. No real hotel reservation or payment occurred."
+  }
+]

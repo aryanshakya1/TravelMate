@@ -1,0 +1,203 @@
+[
+  {
+    "request_id": "REQ-678557-602",
+    "group_id": "G-09",
+    "traveller_id": "T-025",
+    "status": "rejected",
+    "message": "Hi! Excited to join this trip. My dates and interests align well with your itinerary!",
+    "applicantDetails": {
+      "traveller_id": "T-025",
+      "destination": "Tokyo",
+      "check_in": "2027-04-05",
+      "check_out": "2027-04-09",
+      "budget_inr": 70000,
+      "interests": [
+        "TEMPLES",
+        "STREET_FOOD"
+      ],
+      "gender": "MALE",
+      "gender_preference": "SAME_GENDER"
+    },
+    "compatibility": {
+      "score": 68,
+      "breakdown": {
+        "interestSimilarity": 20,
+        "dateSimilarity": 100,
+        "budgetSimilarity": 100
+      },
+      "matchReasons": {
+        "sharedInterests": [
+          "STREET_FOOD"
+        ],
+        "overlapNights": 4,
+        "budgetDifference": 0
+      }
+    },
+    "created_at": "2026-11-13T08:14:38.557Z",
+    "updated_at": "2026-11-13T08:15:50.746Z"
+  },
+  {
+    "request_id": "REQ-033698-524",
+    "group_id": "G-06",
+    "traveller_id": "T-026",
+    "status": "approved",
+    "message": "Hi! Excited to join this trip. My dates and interests align well with your itinerary!",
+    "applicantDetails": {
+      "traveller_id": "T-026",
+      "destination": "Kyoto",
+      "check_in": "2027-04-10",
+      "check_out": "2027-04-13",
+      "budget_inr": 62000,
+      "interests": [
+        "TEMPLES",
+        "STREET_FOOD",
+        "MUSEUMS",
+        "HISTORY",
+        "NIGHTLIFE",
+        "FINE_DINING",
+        "NATURE",
+        "BEACHES",
+        "DESERT",
+        "ADVENTURE"
+      ],
+      "gender": "MALE",
+      "gender_preference": "ANY"
+    },
+    "compatibility": {
+      "score": 67,
+      "breakdown": {
+        "interestSimilarity": 18,
+        "dateSimilarity": 100,
+        "budgetSimilarity": 100
+      },
+      "matchReasons": {
+        "sharedInterests": [
+          "TEMPLES",
+          "STREET_FOOD"
+        ],
+        "overlapNights": 3,
+        "budgetDifference": 0
+      }
+    },
+    "created_at": "2026-11-13T08:20:33.698Z",
+    "updated_at": "2026-11-13T08:20:54.103Z"
+  },
+  {
+    "request_id": "REQ-336271-310",
+    "group_id": "G-02",
+    "traveller_id": "T-002",
+    "status": "approved",
+    "message": "Hi! Excited to join this trip. My dates and interests align well with your itinerary!",
+    "applicantDetails": {
+      "traveller_id": "T-002",
+      "destination": "Kyoto",
+      "check_in": "2027-04-15",
+      "check_out": "2027-04-18",
+      "budget_inr": 64000,
+      "interests": [
+        "TEMPLES",
+        "STREET_FOOD",
+        "ADVENTURE"
+      ],
+      "gender": "FEMALE",
+      "gender_preference": "SAME_GENDER"
+    },
+    "compatibility": {
+      "score": 80,
+      "breakdown": {
+        "interestSimilarity": 50,
+        "dateSimilarity": 100,
+        "budgetSimilarity": 100
+      },
+      "matchReasons": {
+        "sharedInterests": [
+          "TEMPLES",
+          "STREET_FOOD"
+        ],
+        "overlapNights": 3,
+        "budgetDifference": 0
+      }
+    },
+    "created_at": "2026-11-13T09:15:36.271Z",
+    "updated_at": "2026-11-13T09:15:49.112Z"
+  },
+  {
+    "request_id": "REQ-998248-444",
+    "group_id": "G-05",
+    "traveller_id": "T-001",
+    "status": "rejected",
+    "message": "Hi! Excited to join this trip. My dates and interests align well with your itinerary!",
+    "applicantDetails": {
+      "traveller_id": "T-001",
+      "destination": "Kyoto",
+      "check_in": "2027-04-11",
+      "check_out": "2027-04-15",
+      "budget_inr": 63000,
+      "interests": [
+        "TEMPLES",
+        "STREET_FOOD",
+        "PHOTOGRAPHY",
+        "BUDGET_STAYS"
+      ],
+      "gender": "FEMALE",
+      "gender_preference": "SAME_GENDER"
+    },
+    "compatibility": {
+      "score": 67,
+      "breakdown": {
+        "interestSimilarity": 17,
+        "dateSimilarity": 100,
+        "budgetSimilarity": 100
+      },
+      "matchReasons": {
+        "sharedInterests": [
+          "TEMPLES"
+        ],
+        "overlapNights": 4,
+        "budgetDifference": 0
+      }
+    },
+    "created_at": "2026-11-13T11:06:38.248Z",
+    "updated_at": "2026-11-13T11:25:39.381Z"
+  },
+  {
+    "request_id": "REQ-128890-506",
+    "group_id": "G-08",
+    "traveller_id": "T-001",
+    "status": "approved",
+    "message": "Hi! Excited to join this trip. My dates and interests align well with your itinerary!",
+    "applicantDetails": {
+      "traveller_id": "T-001",
+      "destination": "Kyoto",
+      "check_in": "2027-04-10",
+      "check_out": "2027-04-14",
+      "budget_inr": 55000,
+      "interests": [
+        "TEMPLES",
+        "STREET_FOOD",
+        "PHOTOGRAPHY",
+        "BUDGET_STAYS"
+      ],
+      "gender": "FEMALE",
+      "gender_preference": "SAME_GENDER"
+    },
+    "compatibility": {
+      "score": 76,
+      "breakdown": {
+        "interestSimilarity": 40,
+        "dateSimilarity": 100,
+        "budgetSimilarity": 100
+      },
+      "matchReasons": {
+        "sharedInterests": [
+          "TEMPLES",
+          "STREET_FOOD"
+        ],
+        "overlapNights": 4,
+        "budgetDifference": 0
+      }
+    },
+    "created_at": "2026-11-13T11:08:48.890Z",
+    "updated_at": "2026-11-13T11:09:08.858Z"
+  }
+]

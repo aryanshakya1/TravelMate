@@ -1,0 +1,50 @@
+[
+  {
+    "saved_id": "SH-532222-452",
+    "group_id": "G-02",
+    "hotel_id": "HTL-KYO-004",
+    "hotel_name": "Sakura Garden Hotel",
+    "hotel_city": "Kyoto",
+    "hotel_area": "Higashiyama",
+    "hotel_rating": 8.7,
+    "hotel_image": "images/hotels/HOTEL-TWIN-1.jpg",
+    "room_id": "RM-KYO-004-A",
+    "room_name": "Twin Room",
+    "room_type": "TWIN",
+    "max_adults": 2,
+    "rooms_needed": 1,
+    "nights_count": 3,
+    "total_cost": 17976,
+    "cost_per_person": 8988,
+    "saved_by_traveller_ids": [
+      "T-003"
+    ],
+    "preference_count": 1,
+    "created_at": "2026-11-13T09:18:52.222Z",
+    "updated_at": "2026-11-13T09:18:52.222Z"
+  },
+  {
+    "saved_id": "SH-534438-259",
+    "group_id": "G-02",
+    "hotel_id": "HTL-KYO-004",
+    "hotel_name": "Sakura Garden Hotel",
+    "hotel_city": "Kyoto",
+    "hotel_area": "Higashiyama",
+    "hotel_rating": 8.7,
+    "hotel_image": "images/hotels/HOTEL-TWIN-1.jpg",
+    "room_id": "RM-KYO-004-B",
+    "room_name": "Family Room",
+    "room_type": "FAMILY",
+    "max_adults": 2,
+    "rooms_needed": 1,
+    "nights_count": 3,
+    "total_cost": 24360,
+    "cost_per_person": 12180,
+    "saved_by_traveller_ids": [
+      "T-003"
+    ],
+    "preference_count": 1,
+    "created_at": "2026-11-13T09:18:54.438Z",
+    "updated_at": "2026-11-13T09:18:54.438Z"
+  }
+]
